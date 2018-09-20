@@ -1,0 +1,655 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>首页</title>
+    {load href="__STATIC__/index/css/style.css"}
+    {load href="__STATIC__/index/css/foot.css"}
+    {load href="__STATIC__/index/css/swiper-3.4.2.min.css"}
+    {load href="__STATIC__/index/js/jquery-1.12.1.min.js"}
+    {load href="__STATIC__/index/js/swiper-3.4.2.jquery.min.js"}
+    {load href="__STATIC__/index/js/jquery.lazyload.min.js"}
+<!--<link rel="stylesheet" type="text/css" href="css/style.css">-->
+<!--<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_403143_nbpgsnnn79tqpvi.css">-->
+<!--<link rel="stylesheet" type="text/css" href="css/swiper-3.4.2.min.css">-->
+<!--<script src="js/jquery-1.12.1.min.js"></script>-->
+<!--<script src="js/swiper-3.4.2.jquery.min.js"></script>-->
+<!--<script src="js/jquery.lazyload.min.js"></script>-->
+</head>
+
+<body>
+<!--该盒子一直包括到店长推荐-->
+<!-- __STATIC__ -->
+<script>
+$("body").css({background:"#f4f4f4"})
+</script>
+<div class="width100 hidden bj_fff">
+<!--banner-->
+<div class="width100 hidden swiper-container" id="swiper1" style="max-height:197px;">
+	<div id="box" class="swiper-wrapper">
+    	<img src="__STATIC__/index/img/sp3.jpg" class="swiper-slide">
+        <img src="__STATIC__/index/img/sp3.jpg" class="swiper-slide">
+        <img src="__STATIC__/index/img/sp3.jpg" class="swiper-slide">
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+<script>
+$(function(){
+$("#box img").css({opacity:1})
+var mySwiper = new Swiper('#swiper1', {
+	pagination:'.swiper-pagination',
+	autoplay : 1000,
+	})
+})
+</script>
+<!--搜索框-->
+<div class="width100 hidden bj_fff" style="height:40px;" onClick="dw()">
+	<div class="center width96 border font14 c_66 hidden" style="height:30px;margin-top:5px;border-radius:15px;line-height:28px;text-indent:10px;">
+    	请搜索商品
+        <img src="__STATIC__/index/img/fdj.jpg" width="20" height="20" class="right" style="margin-top:5px;margin-right:10px;">
+    </div>
+</div>
+<script>
+function dw(){
+	alert("点我干嘛!!")
+	}
+</script>
+<!--分类-->
+<div class="width100 hidden" style="padding-top:4px;padding-bottom:4px;">
+	<div class="width96 center" id="fenlei">
+    	<a href="javascript:void(0)">
+        	<b><img src="__STATIC__/img/fenlei.jpg"></b>
+            <p class="tcenter font12 c_33" style="margin-top:4px">简介</p>
+        </a>
+        <a href="javascript:void(0)">
+        	<b><img src="__STATIC__/img/fenlei.jpg"></b>
+            <p class="tcenter font12 c_33" style="margin-top:4px">收藏</p>
+        </a>
+        <a href="javascript:void(0)">
+        	<b><img src="__STATIC__/img/fenlei.jpg"></b>
+            <p class="tcenter font12 c_33" style="margin-top:4px">新品</p>
+        </a>
+        <a href="javascript:void(0)">
+        	<b><img src="__STATIC__/img/fenlei.jpg"></b>
+            <p class="tcenter font12 c_33" style="margin-top:4px">优惠券</p>
+        </a>
+    </div>
+</div>
+<!--标题-->
+<div class="width100 tcenter c_33 font16" style="margin-top:16px;">店长推荐</div>
+<!--推荐块-->
+<div class="width100 hidden" style="margin-top:12px;padding-bottom:8px;" id="box_show">
+	<!--按照最多3个的进行布局-->
+	<div class="width96 center hidden">
+    	<a href="javascript:void(0)" class="ts">
+        	<img src="__STATIC__/img/sp1.jpg">
+        </a>
+        <a href="javascript:void(0)" class="ts">
+        	<img src="__STATIC__/img/sp2.jpg">
+        </a>
+        <a href="javascript:void(0)" class="ts">
+        	<img src="__STATIC__/img/sp3.jpg">
+        </a>
+    </div>
+    <!--按照最多2个的进行布局-->
+    <!--按照最多1个的进行布局-->
+    <script>
+	var a=$(".ts").length;
+	if(a===0){
+		$("#box_show").css({display:"none"})
+		}else if(a===1){
+			/*一张的时候图片要宽的*/
+			$("head").eq(0).append("<link rel=\"stylesheet\" type=\"text/css\" href=\"__STATIC__/css/one.css\">")
+			}else if(a===2){
+				/*二张的时候图片要宽的*/
+				$("head").eq(0).append("<link rel=\"stylesheet\" type=\"text/css\" href=\"__STATIC__/css/two.css\">")
+				}else if(a===3){
+					/*三张的时候图片要2个宽的,一个方的*/
+					$("head").eq(0).append("<link rel=\"stylesheet\" type=\"text/css\" href=\"__STATIC__/css/three.css\">")
+					}else{
+						alert("最多支持三个")
+						}
+    </script>
+</div>
+</div>
+<!--大盒子结束-->
+<!--标题-->
+<div class="width100 tcenter c_33 font16" style="margin-top:16px;">人气商品</div>
+<div class="width100 hidden" style="margin-top:12px;">
+	<div class="width96 center hidden" style="overflow:scroll;overflow-Y:hidden;">
+    	<div class="hidden" id="hot_sp">
+        	<a href="javascript:void(0)" class="bj_fff">
+            	<img src="__STATIC__/img/sp5.jpg">
+                <p class="yihang block center font12 c33 width96">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 width96 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </a>
+            <a href="javascript:void(0)" class="bj_fff">
+            	<img src="__STATIC__/img/sp6.jpg">
+                <p class="yihang block center font12 c33 width96">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 width96 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </a>
+            <a href="javascript:void(0)" class="bj_fff">
+            	<img src="__STATIC__/img/sp7.jpg">
+                <p class="yihang block center font12 c33 width96">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 width96 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </a>
+            <a href="javascript:void(0)" class="bj_fff">
+            	<img src="__STATIC__/img/sp8.jpg">
+                <p class="yihang block center font12 c33 width96">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 width96 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </a>
+            <a href="javascript:void(0)" class="bj_fff">
+            	<img src="__STATIC__/img/sp9.jpg">
+                <p class="yihang block center font12 c33 width96">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 width96 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </a>
+            <a href="javascript:void(0)" class="bj_fff">
+            	<img src="__STATIC__/img/sp10.jpg">
+                <p class="yihang block center font12 c33 width96">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 width96 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </a>
+        </div>
+    </div>
+</div>
+<script>
+var m=$("#hot_sp a").length;
+$("#hot_sp").css({width:m*(188+16)-16+'px'})
+</script>
+<!--标题-->
+<div class="width100 tcenter c_33 font16" style="margin-top:16px;">新品鲜知</div>
+<div class="width100 hidden" style="margin-top:12px;margin-bottom:60px;">
+	<div class="width96 center hidden" id="new_xz">
+    	<a href="#">
+        	<img data-original="__STATIC__/img/sp5.jpg">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="#">
+        	<img data-original="__STATIC__/img/sp6.jpg">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="#">
+        	<img data-original="__STATIC__/img/sp7.jpg">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="#">
+        	<img data-original="__STATIC__/img/sp8.jpg">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="#">
+        	<img data-original="__STATIC__/img/sp9.jpg">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="#">
+        	<img data-original="__STATIC__/img/sp10.jpg">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="#">
+        	<img data-original="__STATIC__/img/sp11.jpg">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="#">
+        	<img data-original="__STATIC__/img/sp12.jpg">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="#">
+        	<img data-original="__STATIC__/img/sp13.jpg">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="#">
+        	<img data-original="__STATIC__/img/sp6.jpg">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="#">
+        	<img data-original="__STATIC__/img/sp5.jpg">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="#">
+        	<img data-original="__STATIC__/img/sp6.jpg">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="#">
+        	<img data-original="__STATIC__/img/sp7.jpg">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="#">
+        	<img data-original="__STATIC__/img/sp8.jpg">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="#">
+        	<img data-original="__STATIC__/img/sp9.jpg">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="#">
+        	<img data-original="__STATIC__/img/sp10.jpg">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="#">
+        	<img data-original="__STATIC__/img/sp11.jpg">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="#">
+        	<img data-original="__STATIC__/img/sp12.jpg">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="#">
+        	<img data-original="__STATIC__/img/sp13.jpg">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="#">
+        	<img data-original="__STATIC__/img/sp6.jpg">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="#">
+        	<img data-original="__STATIC__/img/sp6.jpg">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="#">
+        	<img data-original="__STATIC__/img/sp5.jpg">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="#">
+        	<img data-original="__STATIC__/img/sp6.jpg">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="#">
+        	<img data-original="__STATIC__/img/sp7.jpg">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="#">
+        	<img data-original="__STATIC__/img/sp8.jpg">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="#">
+        	<img data-original="__STATIC__/img/sp13.jpg">
+            <div class="width96 hidden center">
+            	<p class="yihang block center font12 c33">妙洁 吸水拖把卡槽型</p>
+                <p class="yihang block center font12 c33 hidden">
+                	<span class="left c_33">
+                    	商城价:<font class="red">29.6</font>
+                    	<font class="font12 red">元</font>
+                    </span>
+                    <span class="right c_33">
+                    	优惠卷:<font class="red">20</font>
+                        <font class="font12 red">元</font>
+                    </span>
+                </p>
+            </div>
+        </a>
+    </div>
+</div>
+<div id="footer">
+	<a href="javascript:void(0)" class="on">
+    	<p><i class="iconfont icon-shouye" style="font-size:27px!important"></i></p>
+        <span>首页</span>
+    </a>
+    <a href="javascript:void(0)">
+    	<p><i class="iconfont icon-leimupinleifenleileibie" style="font-size:27px!important"></i></p>
+        <span>分类</span>
+    </a>
+    <a href="javascript:void(0)">
+    	<p><i class="iconfont icon-gouwuche" style="font-size:27px!important"></i></p>
+        <span>购物车</span>
+    </a>
+    <a href="javascript:void(0)">
+    	<p><i class="iconfont icon-wode" style="font-size:27px!important"></i></p>
+        <span>我的</span>
+    </a>
+</div>
+<script src="__STATIC__/js/lazyload.js"></script>
+</body>
+</html>

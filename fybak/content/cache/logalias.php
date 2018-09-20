@@ -1,0 +1,1 @@
+<?php exit;//a:1:{i:8;s:8:"optimize";}
